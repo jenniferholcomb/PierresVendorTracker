@@ -43,7 +43,7 @@ namespace PierresVendors.Tests
     {
       // Arrange
       string item = "baguette";
-     Order newOrder = new Order(item);
+      Order newOrder = new Order(item);
 
       // Act
       string updateItem = "croissant";
@@ -71,10 +71,10 @@ namespace PierresVendors.Tests
     public void GetAll_ReturnsOrders_OrderList()
     {
       //Arrange
-      string order01 = "baguette";
-      string order02 = "croissant";
-      Order newOrder1 = new Order(order01);
-      Order newOrder2 = new Order(order02);
+      string item01 = "baguette";
+      string item02 = "croissant";
+      Order newOrder1 = new Order(item01);
+      Order newOrder2 = new Order(item02);
       List<Order> newOrderList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
@@ -84,6 +84,18 @@ namespace PierresVendors.Tests
       CollectionAssert.AreEqual(newOrderList, result);
     }
 
+    [TestMethod]
+    public void GetId_ReturnsOrderId_Int()
+    {
+      // Arrange
+      string item = "baguette";
+      Order newOrder = new Order(item);
 
+      // Act
+      int result = newOrder.Id;
+
+      // Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }

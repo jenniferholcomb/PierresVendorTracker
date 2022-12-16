@@ -101,5 +101,19 @@ namespace PierresVendors.Tests
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+        [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      // Arrange
+      string venName = "Suzie's Cafe";
+      Vendor newVendor = new Vendor(venName);
+
+      // Act
+      int result = newVendor.Id;
+
+      // Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }
