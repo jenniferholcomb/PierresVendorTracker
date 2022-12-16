@@ -40,11 +40,11 @@ namespace PierresVendors.Controllers
       return RedirectToAction("Index");
     }
 
-    // [HttpGet]
-    // public ActionResult Show(int vendorId)
-    // {
-    //   Vendor currentVendor = Vendor.Find(vendorId);
-    //   return View(currentVendor);
-    // }
+    [HttpGet("/vendors/{vendorId}")]
+    public ActionResult Show(int vendorId)
+    {
+      Vendor currentVendor = Vendor.Find(vendorId);
+      return View(currentVendor);
+    }
   }
 }
