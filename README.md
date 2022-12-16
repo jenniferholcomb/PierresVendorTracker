@@ -30,9 +30,9 @@
 
 ## Specs
 
-* Create a new instance of class Bread, with empty constructor
-* Create a new instance of class Pastry, with empty constructor
-* A method that takes users order, determines if user wants bread, pastry, or both
+* Create a new instance of class Vendor, with empty constructor
+* Create a new instance of class Order, with empty constructor
+* A method that takes Vendor's order, determines if user wants bread, pastry, or both
 * A method that calculates cost of how many loaves
 * A method that calculates cost of how many pastry
 
