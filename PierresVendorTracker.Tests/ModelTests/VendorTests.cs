@@ -17,7 +17,7 @@ namespace PierresVendors.Tests
     public void VendorConstuctor_CreatesInstanceOfVendor_Vendor()
     {
       // Arrange
-      Vendor newVendor = new Vendor("test vendor");
+      Vendor newVendor = new Vendor("test vendor", "test vendor type");
 
       // Assert
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
@@ -28,9 +28,10 @@ namespace PierresVendors.Tests
     {
       // Arrange
       string venName = "Suzie's cafe";
+      string venType = "restaurant";
 
       // Act
-      Vendor newVendor = new Vendor(venName);
+      Vendor newVendor = new Vendor(venName, venType);
       string result = newVendor.VenName;
 
       // Assert
@@ -43,7 +44,8 @@ namespace PierresVendors.Tests
     {
       // Arrange
       string venName = "Suzie's cafe";
-      Vendor newVendor = new Vendor(venName);
+            string venType = "restaurant";
+      Vendor newVendor = new Vendor(venName, venType);
 
       // Act
       string newName = "Suzie's deli";
@@ -73,8 +75,10 @@ namespace PierresVendors.Tests
       //Arrange
       string vendor01 = "Suzie's Cafe";
       string vendor02 = "Bea's Bread Shop";
-      Vendor newVendor1 = new Vendor(vendor01);
-      Vendor newVendor2 = new Vendor(vendor02);
+      string venType01 = "restaurant";
+      string venType02 = "market";
+      Vendor newVendor1 = new Vendor(vendor01, venType01);
+      Vendor newVendor2 = new Vendor(vendor02, venType02);
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       //Act
@@ -92,7 +96,8 @@ namespace PierresVendors.Tests
       Order newOrder = new Order(item);
       List<Order> newList = new List<Order> { newOrder };
       string vendor01 = "Suzie's cafe";
-      Vendor newVendor = new Vendor(vendor01);
+      string venType = "restaurant";
+      Vendor newVendor = new Vendor(vendor01, venType);
 
       // Act
       newVendor.AddItem(newOrder);
@@ -107,7 +112,8 @@ namespace PierresVendors.Tests
     {
       // Arrange
       string venName = "Suzie's Cafe";
-      Vendor newVendor = new Vendor(venName);
+      string venType = "restaurant";
+      Vendor newVendor = new Vendor(venName, venType);
 
       // Act
       int result = newVendor.Id;
