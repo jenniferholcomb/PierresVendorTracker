@@ -5,6 +5,7 @@ namespace PierresVendors.Models
   public class Vendor
   {
     public string VenName { get; set; }
+    public int Id { get; }
     public List<Order> OrderItems { get; set; }
 
     private static List<Vendor> _instances = new List<Vendor> {};
@@ -14,6 +15,7 @@ namespace PierresVendors.Models
     {
       VenName = vendorName;
       _instances.Add(this);
+      Id = _instances.Count;
       OrderItems = new List<Order> {};
     }
 
