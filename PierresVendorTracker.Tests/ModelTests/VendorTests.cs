@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PierresVendors.Models;
-// using System.Collections.Generic;
+using System.Collections.Generic;
 // using System;
 
 namespace PierresVendors.Tests
@@ -8,13 +8,12 @@ namespace PierresVendors.Tests
   [TestClass]
   public class VendorTests 
   {
-
-    [Test Method]
-    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
+    [TestMethod]
+    public void VendorConstuctor_CreatesInstanceOfVendor_Vendor()
     {
       // Arrange
       Vendor newVendor = new Vendor("test vendor");
-      // Act
+
       // Assert
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
@@ -51,13 +50,13 @@ namespace PierresVendors.Tests
     }
 
     [TestMethod]
-    public void GetAll_ReturnsEmptyList_ItemList()
+    public void GetAll_ReturnsEmptyList_VendorList()
     {
       // Arrange
-      List<Item> newList = new List<Item> { };
+      List<Vendor> newList = new List<Vendor> { };
 
       // Act
-      List<Item> result = Item.GetAll();
+      List<Vendor> result = Vendor.GetAll();
 
       // Assert
       CollectionAssert.AreEqual(newList, result);
@@ -69,12 +68,12 @@ namespace PierresVendors.Tests
       //Arrange
       string vendor01 = "Suzie's Cafe";
       string vendor02 = "Bea's Bread Shop";
-      Item newVendor1 = new Item(vendor01);
-      Item newVendor2 = new Item(vendor02);
-      List<Item> newList = new List<Item> { newVendor1, newVendor2 };
+      Vendor newVendor1 = new Vendor(vendor01);
+      Vendor newVendor2 = new Vendor(vendor02);
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
       //Act
-      List<Item> result = Item.GetAll();
+      List<Vendor> result = Vendor.GetAll();
 
       //Assert
       CollectionAssert.AreEqual(newList, result);
