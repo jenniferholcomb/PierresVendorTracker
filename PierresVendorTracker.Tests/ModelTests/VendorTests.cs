@@ -84,15 +84,22 @@ namespace PierresVendors.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-    // [TestMethod]
-    // public void GetName_ReturnsName_String()
-    // {
-    //   // Act
+    [TestMethod]
+    public void AddOrderItem_AssociatesOrderWithVendor_OrderItemList()
+    {
+      // Arrange
+      string item = "baguette";
+      Order newOrder = new Order(item);
+      List<Order> newList = new List<Order> { newOrder };
+      string vendor01 = "Suzie's cafe";
+      Vendor newVendor = new Vendor(vendor01);
 
-    //   // Arrange
+      // Act
+      newVendor.AddItem(newOrder);
+      List<Order> result = newVendor.OrderItems;
 
-    //   // Assert
-      
-    // }
+      // Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
