@@ -10,7 +10,7 @@ namespace PierresVendors.Tests
   {
     public void Dispose()
     {
-      Vendor.ClearAll();
+      Order.ClearAll();
     }
 
     [TestMethod]
@@ -30,11 +30,11 @@ namespace PierresVendors.Tests
       string item = "baguette";
 
       // Act
-      Order newVendor = new Order(item);
-      string result = newOrder.item;
+      Order newOrder = new Order(item);
+      string result = newOrder.Item;
 
       // Assert
-      Assert.AreEqual(newVendor, result);
+      Assert.AreEqual(item, result);
 
     }
 
@@ -58,30 +58,30 @@ namespace PierresVendors.Tests
     public void GetAll_ReturnsEmptyList_OrderList()
     {
       // Arrange
-      List<Order> newList = new List<Order> { };
+      List<Order> newOrderList = new List<Order> { };
 
       // Act
       List<Order> result = Order.GetAll();
 
       // Assert
-      CollectionAssert.AreEqual(newList, result);
+      CollectionAssert.AreEqual(newOrderList, result);
     }
 
     [TestMethod]
-    public void GetAll_ReturnsVendors_VendorList()
+    public void GetAll_ReturnsOrders_OrderList()
     {
       //Arrange
       string order01 = "baguette";
       string order02 = "croissant";
       Order newOrder1 = new Order(order01);
       Order newOrder2 = new Order(order02);
-      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      List<Order> newOrderList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
       List<Order> result = Order.GetAll();
 
       //Assert
-      CollectionAssert.AreEqual(newList, result);
+      CollectionAssert.AreEqual(newOrderList, result);
     }
 
 
