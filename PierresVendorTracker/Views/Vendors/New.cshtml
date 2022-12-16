@@ -2,11 +2,16 @@
   Layout = "_Layout";
 }
 
-<h3>Add a Vendor</h1>
-
 <form action="/vendors" method="post">
-  <label for="vendorName">Vendor Name</label>
-  <input id="vendorName" name="vendorName" type="text">
+  <label for="vendorName"><h3>Add New Vendor:</h3></label><br>
+  <input id="vendorName" name="vendorName" type="text"><br><br>
+  <label for="vendorType"><h3>Select Vendor Type:</h3></label><br>
+  <input id="vendorType1" name="vendorType1" type="checkbox" value="true">
+  <label for="vendorType1">Restaurant</label><br>
+  <input id="vendorType2" name="vendorType2" type="checkbox" value="true">
+  <label for="vendorType2">Market</label><br>
+  <input id="vendorType3" name="vendorType3" type="checkbox" value="true">
+  <label for="vendorType3">Wholesale Distributor</label><br><br>
   <button type="submit">Add</button>
 </form>
 

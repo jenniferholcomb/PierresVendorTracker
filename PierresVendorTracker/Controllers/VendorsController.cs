@@ -21,8 +21,21 @@ namespace PierresVendors.Controllers
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string vendorName, string vendorType)
+    public ActionResult Create(string vendorName, bool vendorType1 = false, bool vendorType2 = false, bool vendorType3 = false)
     {
+      string vendorType = "";
+      if (vendorType1)
+      {
+        vendorType = "restaurant";
+      }
+      if (vendorType2)
+      {
+        vendorType = "market";
+      }
+      if (vendorType3)
+      {
+        vendorType = "wholesale distributor";
+      }
       Vendor newVendor = new Vendor(vendorName, vendorType);
       return RedirectToAction("Index");
     }
