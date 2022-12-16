@@ -37,7 +37,7 @@ namespace PierresVendors.Controllers
         vendorType = "wholesale distributor";
       }
       Vendor newVendor = new Vendor(vendorName, vendorType);
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "/");
     }
 
     [HttpGet("/vendors/{vendorId}")]
