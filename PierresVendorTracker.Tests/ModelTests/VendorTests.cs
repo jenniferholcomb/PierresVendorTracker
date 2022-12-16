@@ -107,7 +107,7 @@ namespace PierresVendors.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
-        [TestMethod]
+    [TestMethod]
     public void GetId_ReturnsVendorId_Int()
     {
       // Arrange
@@ -121,5 +121,21 @@ namespace PierresVendors.Tests
       // Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsVendorFromId_Vendor()
+    {
+      // Arrange
+      string venName = "Suzie's Cafe";
+      string venType = "restaurant";
+      Vendor newVendor = new Vendor(venName, venType);
+
+      // Act
+      Vendor result = newVendor.Find(1);
+
+      // Assert
+      Assert.AreEqual(newVendor, result);
+    }
+
   }
 }
