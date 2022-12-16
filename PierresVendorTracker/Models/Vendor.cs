@@ -5,6 +5,7 @@ namespace PierresVendors.Models
   public class Vendor
   {
     public string VenName { get; set; }
+    public List<Order> OrderItems { get; set; }
 
     private static List<Vendor> _instances = new List<Vendor> {};
   
@@ -13,6 +14,7 @@ namespace PierresVendors.Models
     {
       VenName = vendorName;
       _instances.Add(this);
+      OrderItems = new List<Order> {};
     }
 
     public static List<Vendor> GetAll()
@@ -23,6 +25,11 @@ namespace PierresVendors.Models
     public static void ClearAll()
     {
       _instances.Clear();
+    }
+
+    public void AddItem(Order orderItems)
+    {
+      OrderItems.Add(orderItems);
     }
   }
 }
