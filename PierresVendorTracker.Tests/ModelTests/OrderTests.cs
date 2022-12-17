@@ -17,41 +17,57 @@ namespace PierresVendors.Tests
     public void OrderConstuctor_CreatesInstanceOfOrder_Order()
     {
       // Arrange
-      Order newOrder = new Order("test order");
+      string title = "baguette";
+      string description = "wheat";
+      int quantity = 20;
+      int price = 2;
+      string frequency = "weekly";
+      string date = "12/16/2022";
+      Order newOrder = new Order(title, description, quantity, price, frequency, date);
 
       // Assert
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
 
     [TestMethod]
-    public void GetItem_ReturnsItem_String()
+    public void GetTitle_ReturnsTitle_String()
     {
       // Arrange
-      string item = "baguette";
+      string title = "baguette";
+      string description = "wheat";
+      int quantity = 20;
+      int price = 2;
+      string frequency = "weekly";
+      string date = "12/16/2022";
 
       // Act
-      Order newOrder = new Order(item);
-      string result = newOrder.Item;
+      Order newOrder = new Order(title, description, quantity, price, frequency, date);
+      string result = newOrder.Title;
 
       // Assert
-      Assert.AreEqual(item, result);
+      Assert.AreEqual(title, result);
 
     }
 
     [TestMethod]
-    public void SetItem_SetOrderItem_String()
+    public void SetTitle_SetOrderTitle_String()
     {
       // Arrange
-      string item = "baguette";
-      Order newOrder = new Order(item);
+      string title = "baguette";
+      string description = "wheat";
+      int quantity = 20;
+      int price = 2;
+      string frequency = "weekly";
+      string date = "12/16/2022";
+      Order newOrder = new Order(title, description, quantity, price, frequency, date);
 
       // Act
-      string updateItem = "croissant";
-      newOrder.Item = updateItem;
-      string result = newOrder.Item;
+      string updateTitle = "croissant";
+      newOrder.Title = updateTitle;
+      string result = newOrder.Title;
 
       // Assert
-      Assert.AreEqual(updateItem, result);
+      Assert.AreEqual(updateTitle, result);
     }
 
     [TestMethod]
@@ -71,10 +87,20 @@ namespace PierresVendors.Tests
     public void GetAll_ReturnsOrders_OrderList()
     {
       //Arrange
-      string item01 = "baguette";
-      string item02 = "croissant";
-      Order newOrder1 = new Order(item01);
-      Order newOrder2 = new Order(item02);
+      string title = "baguette";
+      string description = "wheat";
+      int quantity = 20;
+      int price = 2;
+      string frequency = "weekly";
+      string date = "12/16/2022";
+      string title2 = "croissant";
+      string description2 = "chocolate chip";
+      int quantity2 = 12;
+      int price2 = 3;
+      string frequency2 = "weekly";
+      string date2 = "12/16/2022";
+      Order newOrder1 = new Order(title, description, quantity, price, frequency, date);
+      Order newOrder2 = new Order(title2, description2, quantity2, price2, frequency2, date2);
       List<Order> newOrderList = new List<Order> { newOrder1, newOrder2 };
 
       //Act
@@ -88,8 +114,13 @@ namespace PierresVendors.Tests
     public void GetId_ReturnsOrderId_Int()
     {
       // Arrange
-      string item = "baguette";
-      Order newOrder = new Order(item);
+      string title = "baguette";
+      string description = "wheat";
+      int quantity = 20;
+      int price = 2;
+      string frequency = "weekly";
+      string date = "12/16/2022";
+      Order newOrder = new Order(title, description, quantity, price, frequency, date);
 
       // Act
       int result = newOrder.Id;

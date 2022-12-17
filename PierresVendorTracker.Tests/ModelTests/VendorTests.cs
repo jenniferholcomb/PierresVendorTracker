@@ -92,8 +92,13 @@ namespace PierresVendors.Tests
     public void AddOrderItem_AssociatesOrderWithVendor_OrderItemList()
     {
       // Arrange
-      string item = "baguette";
-      Order newOrder = new Order(item);
+      string title = "baguette";
+      string description = "wheat";
+      int quantity = 20;
+      int price = 2;
+      string frequency = "weekly";
+      string date = "12/16/2022";
+      Order newOrder = new Order(title, description, quantity, price, frequency, date);
       List<Order> newList = new List<Order> { newOrder };
       string vendor01 = "Suzie's cafe";
       string venType = "restaurant";
@@ -131,7 +136,7 @@ namespace PierresVendors.Tests
       Vendor newVendor = new Vendor(venName, venType);
 
       // Act
-      Vendor result = newVendor.Find(1);
+      Vendor result = Vendor.Find(1);
 
       // Assert
       Assert.AreEqual(newVendor, result);
