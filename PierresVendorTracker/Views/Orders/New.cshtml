@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+<form action="/orders" method="post">
+  <label for="orderTitle"><h3>Add New Order Item:</h3></label><br>
+  <input id="orderTitle" name="orderTitle" type="text"><br><br>
+  <label for="orderDescription"><h3>Item Description:</h3></label><br>
+  <input id="orderDescription" name="orderDescription" type="text"><br><br>
+  <label for="orderQuantity"><h3>Item Quantity:</h3></label><br>
+  <input id="orderQuantity" name="orderQuantity" type="num"><br><br>
+  <label for="orderPrice"><h3>Price Per Item:</h3></label><br>
+  <input id="orderPrice" name="orderPrice" type="num"><br><br>
+  <label for="orderFrequency"><h3>Order frequency:</h3></label><br>
+  <select name="orderFrequency" id="orderFrequency">
+    <option value="">--Choose frequency--</option>
+    <option value="daily">Daily</option>
+    <option value="weekly">Weekly</option>
+    <option value="monthly">Monthly</option>
+  </select><br><br>
+  <button type="submit">Add</button>
+</form>
