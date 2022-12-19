@@ -3,10 +3,23 @@
 }
 @using PierresVendors.Models;
 
-<h3>VENDOR: @Model.VenName</h3>
-<h3>VENDOR TYPE: @Model.VenType</h3>
+<h3>VENDOR: @Model["vendor"].VenName</h3>
+<h3>VENDOR TYPE: @Model["vendor"].VenType</h3>
 
-<p><a href='/vendors/@Model.Id/orders/new'>START A NEW ORDER</a></p>
+<h3>ORDERS:</h3>
 
-<br><p><a href='/vendors'>RETURN TO VENDORS LIST</a>
+@if (Model["orders"].Count == 0)
+{
+  <h3>No orders to view.</h3>
+}
+
+@foreach (Order order in Model["orders"])
+{
+  <h4><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Id - @order.Title</a></h4>
+}
+
+
+<br><br><p><a href='/vendors/@Model["vendor"].Id/orders/new'>START A NEW ORDER</a></p>
+
+<p><a href='/vendors'>RETURN TO VENDORS LIST</a>
 <p><a href='/'>RETURN HOME</a>

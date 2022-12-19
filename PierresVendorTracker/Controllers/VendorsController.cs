@@ -43,8 +43,26 @@ namespace PierresVendors.Controllers
     [HttpGet("/vendors/{vendorId}")]
     public ActionResult Show(int vendorId)
     {
-      Vendor currentVendor = Vendor.Find(vendorId);
-      return View(currentVendor);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      List<Order> vendorOrders = foundVendor.OrderItems;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
     }
-  }
+
+    [HttpPost("/vendors/{vendorId}")]
+    public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int orderQuantity, int orderPrice, string orderFrequency, string orderDate)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderTitle, orderDescription, orderQuantity, orderPrice, orderFrequency, orderDate);
+      foundVendor.AddItem(newOrder);
+      List<Order> vendorOrders = foundVendor.OrderItems;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
+    } 
+  } 
 }
+

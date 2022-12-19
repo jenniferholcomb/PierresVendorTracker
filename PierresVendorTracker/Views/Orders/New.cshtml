@@ -2,7 +2,8 @@
   Layout = "_Layout";
 }
 
-<form action="/orders" method="post">
+<form action="/vendors/@Model.Id" method="post">
+  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
   <label for="orderTitle"><h3>Add New Order Item:</h3></label><br>
   <input id="orderTitle" name="orderTitle" type="text"><br><br>
   <label for="orderDescription"><h3>Item Description:</h3></label><br>
@@ -18,5 +19,7 @@
     <option value="weekly">Weekly</option>
     <option value="monthly">Monthly</option>
   </select><br><br>
+  <label for="orderDate"><h3>Order Date:</h3></label><br>
+  <input id="orderDate" name="orderDate" type="text"><br><br>
   <button type="submit">Add</button>
 </form>

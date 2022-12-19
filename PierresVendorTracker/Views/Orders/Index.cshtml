@@ -1,7 +1,10 @@
 @{
   Layout = "_Layout";
 }
+@using PierresVendors.Models;
 
-  <h1>Welcome to your vendor tracker, Pierre!</h1>
-  <!-- <h3><a href='/categories'>View categories</a></h3>
-  <h3><a href='/categories/new'>Add a new category</a></h3> -->
+<h1>Orders</h1>
+
+
+<br><p><a href='/vendors/@Model.Id/orders/new'>ADD A NEW ORDER</a></p>
+<p><a href='/'>RETURN HOME</a>
